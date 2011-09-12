@@ -7,7 +7,7 @@
 # as the executable called "preguntas.txt" or a parameter: path to the file.
 # The file should be in the following format:
 #	number_of_question*Question*opt1*opt2*opt3*opt4*opt5*rigth_option
-# (optx = optionX in text format and right_option in letter format ex.: "e")
+# (optx = optionX in text format, and right_option in letter format ex.: "e")
 
 import sys
 import os
