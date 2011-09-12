@@ -1,0 +1,60 @@
+01*El soporte logico que controla el funcionamiento de un ordenador ocultando sus detalles y facilitando su uso se llama:*software*filmware*unidad central de proceso*sistema operativo*ninguna de las anteriores*d
+02*Las estaciones de trabajo son:*minicomputadores*mainframes*macrocomputadores*microcomputadores*pcs*d
+03*Un archivo informatico reside fisicamente en:*la memoria central*la memoria secundaria*la memoria intermedia*la memoria primaria*ninguna de ellas*b
+04*Los biestables son:*circuitos en secuencia*circuitos secuenciales*relojes*contadores*secuenciadores*b
+05*Los circuitos cuyas salidas dependen exclusivamente de las entradas son:*combinacionales*secuenciales*biestables*complementadores*desplazadores*a
+06*La unidad encargada de gobernar el ordenador se llama:*controlador de dispositivos*unidad aritmetico logica*unidad de control*memoria central*controlador de programa*c
+07*Cual de los siguientes pasos no forma parte de la implantacion y explotacion de programas*enlace*compilacion*codificacion*edicion*prueba de ejecucion*a
+08*El lenguaje maquina...:*Es el unico que entiende directamente la computadora*Fue el tercer lenguaje utilizado en la programacion*se sigue utilizando por su facil aprendizaje*no utiliza el alfabeto binatio*es facil de utilizar*a
+09*Cual de los siguientes errores son mas dificiles de corregir:*de logica*de especificacion*de compilacion*de ejecucion*de sintaxis*b
+10*El compilador detecta errores:*semanticos*sintacticos*logicos*de especificacion*de mantenimiento*b
+11*Los registros logicos tambien se llaman:*registros*campos*bloques*registros fisicos*ninguna de las anteiores*a
+12*los archivos maestros tambien se denominan:*archivos de situacion*archivos de trabajo*archivos de movimiento*archivos de constantes*ninguna de las anteriores*a
+13*En que modelo de bases de datos las tuplas estan formadas por instancias de valores interrelacionados:*modelo de red*modelo de grafo*modelo relacional*modelo jerarquico*modelo piramidal*c
+14*Cuando se sustituyo la valvula de vacio por el transistor comenzo la ........... seneracion:*primera*segunda*tercera*cuarta*quinta*b
+15*Al trabajo simultaneo entre varios procesadores se denomina:*multiprogramacion*multiproceso*coproceso*coprogramacion*proceso compartido*b
+16*El almacenamiento de datos procedentes d elos perifericos en discos magneticos se denomina*spooling*memoria virtual*buffer*acceso directo a memoria*ninguna de las anteriores*a
+17*Al almacenamiento temporal de informacion en memorias intermedias que sirve para compensar la diferencia de velocidad de flujo de datos desde un dispositivo a otro se denomina:*buffer*acceso directo a memoria*memoria virtual*spooling*ninguna de las anteriores*a
+18*La proteccion de memoria es un cometido fundamental del grupo de programas de:*gestion del sistema*gestion del procesador*gestion de datos*gestion de entrada/salida*ninguno de los anteriores*a
+19*Los programas..... tienen como una de sus funciones la reorganizacion de la informacion en archivos:*de servicio de sistema*traductores*ensambladores*de manipulacion de datos*compiladores*d
+20*Los errores que se producen por la aparicion de tokens no reconocibles se denominan:*sintacticos*logicos*de ejecucion*semanticos*lexicograficos*e
+21*Un .... es cada uno de los componentes del archivo, conteniendo el conjunto de informaciones que se acceden y se tratan de manera unitaria:*campo*registro fisico*clave primaria*bloque*registro*e
+22*Que modelo de base de datos se basa en una estructura de grafo:*modelo jerarquico*modelo en red*modelo relacional*modelo de grafico*modelo piramidal*b
+23*Los .... transforman programas fuente escritos en lenguaje simpolico de alto nivel en programas objeto escritos en lenguaje maquina:*traductores*ensambladores*compiladores*interpretes*monitores*a
+24*Un bloque cuyo factor de bloqueo es 32 esta formado por:*32 registros fisicos*32 registros logicos*32 campos*16 subcampos*16 registros expandidos*b
+25*Cual de los siguientes errores suelen provenir de la realizacion de operaciones no permitidas:*de logica*de especificacion*de compilacion*de ejecucion*de sintaxis*d
+26*El codigo de operacion de una instruccion indica:*que operando debe utilizar*que operacion ha realizado*el numero de operandos que utilizan*el codigo numerico utilizado*ninguna de las anteriores*a
+27*El registro de intercambio de memoria forma parte de:*unidad de control*unidad aritmetico logica*memoria central*unidad de direccionamiento*ninguna de las anteriores*c
+28*Las instrucciones de entrada/salida deben especificar:*tipo de instruccion(entrada o salida)*operacion a realizar*dispositivo externo que interviene*en su caso direccion de memoria*todas las anteriores con correctas*e
+29*Como se llama al dispositivo capaz de transmitir informacion entre un ordenador y un usuario o de manejar un soporte de la informacion:*unidad de entrada*periferico local*unidad de entrada/salida*soporte magnetico*unidad de transmision*b
+30*El PROLOG es un lenguaje:*declarativo*natural*codificacion*edicion*prueba de ejecucion*a
+31*Programa=objetos+...:*datos*instrucciones*enunciados*resultados*acciones*e
+32*El resultado de la etapa de enlace es el denominado:*modulo fuente*modulo de enlace*programa enlazado*programa objeto*programa ejecutable*e
+33*Fisicamente el acceso a un archivo se protege por medio de:*el password*etiquetas*criptografia*programas encriptados*control de personal*b
+34*El administrador de los recursos ofrecidos por un ordenador que permite que el hardware alcance un alto rendimiento se llama:*coprocesador*unidad central de proceso*sistema operativo*undiad de control*proceso compartido*c
+35*La tecnica en la cual no interviene el procesador para la realizaion de algunas operaciones de lectura/escritura en la memoria se denomina:*memoria virtual*spooling*buffer*acceso directo a memoria*ninguna de las anteriores*d
+36*Cual de los siguientes grupos de programas no forma parte del nucleo (kernel) de un sistema operativo:*gestion de procesos*gestion de datos*gestion de memoria*gestion de simbolos*gestion del sistema*d
+37*Los cables formados por un hilo conductor central y otro cilindrico exterior se denominan:*de pares*coaxiales*electricos*electromagneticos*ninguna de las anteriores*b
+38*En que nivel de arquitectura ISO se ha definido el protocolo X.25 por el CCTTT:*nivel de enlace*nivel de red*nivel de sesion*nivel de aplicacion*nivel de fuego*a
+39*Cual de los siguientes elementos no pertenece a la unidad de control:*decodificacor*secuenciador*registro de instruccion*contador de programa*registro de entrada*e
+40*Cual de los siguientes elementos no pertenece a la unidad aritmetico-logica:*circuito operacional*registro acumulador*registro de entrada*registro de estado*registro de instruccion*e
+41*El registro de direccion de memoria forma parte de:*memoria central*unidad aritmetico-logica*unidad de control*unidad de direccionamiento*ninguna de las anteriores*a
+42*Cual de los siguientes pasos no forma parte del analisis y diseño de programas:*programacion*codificacion*edicion*analisis*diseño modular*b
+43*El COBOL es un lenguaje:*declarativo*natural*orientado a objetos*imperativo*orientado al problema*d
+44*Cual es el lenguaje que tiene como uno de sus objetivos lograr la independencia de la maquina:*bajo nivel*alto nivel*ensamblador*maquina*ninguno*b
+45*La informacion que se utilizara para actualizar los archivos maestros se almacena en:*archivos de constantes*archivos permanentes*archivos de maniobra*archivos de situacion*archivos de movimiento*e
+46*Como se llama la organizacion que utiliza un area de indices:*organizacion directa*organizacion secuencial*organizacion secuencial indexada*organizacion aleatoria indexada*organizacion por indices*c
+47*A la ejecucion concurrente de varios programas por un mismo procesador se llama:*multiproceso*multiprogramacion*coproceso*coprogramacion*programacion multiple*b
+48*La unidad de acceso en un archivo es:*el indice*el registro*el campo*el atributo*ninguna de ellas*c
+49*La red multipunto se clasifica como:*local*publica*dedicada*extensa*ninguna de ellas*c
+50*Dentro del modelo de referencia ISO, la norma V.24 define el nivel:*fisico*de enlace*de red*todos ellos*ninguno de ellos*a
+51*La planificacion del procesador es una funcion propia del grupo de programas de:*gestion de procesador*gestion de simbolos*gestion del sistema*gestion de datos*gestion de CPD*a
+52*Los programas .... tienen como mision la generacion del sistema operativo completo sobre la computadora:*de servicio de sistema*de manipilacion de datos*compiladores*ensambladores*interpretes*a
+53*Como se denomina el analizador que examina en el programa fuente las unidades basicas de informacion pertenecientes al lenguaje:*sintactico*semantico*lexicografico*logico*ninguno de los anteriores*c
+54*El numero de estados de señal transmitidos por unidad de tiempo se denomina:*baudios*caracteres por segundo*bits por segundo*megaudios*ninguna de las anteriores*c
+55*Los cables consistentes en dos hilos conductores recubiertos de material aislante y trenzados a fin de disminuir las posibles interferencias se denominal:*coaxiales*electricos*de pares*de cuariretes*ninguna de las anteiores*c
+56*En que nivel de la arquitectura ISO se definen los requerimientos del modem:*nivel de enlace*nivel de red*nivel de sesion*nivel de aplicacion*nivel ficiso*a
+57*Que nivel de la arquitectura ISO se encarga del agrupamiento de paquetes en mensajes:*nivel de red*nivel de transporte*nivel de presentacion*nivel de empaquetamiento*nivel fisico*a
+58*Las redes de transmision de datos para la interconexion de ordenadores aparecieron en la ..... generacion:*primera*segunda*tercera*cuarta*quinta*d
+59*El equipo especializado en la gestion de las comunicaciones es:*la computadora*el procesador de I/O*el gestor de transmisiones*el procesador front-end*ninguno de ellos*e
+60*Al enlace que se establece entre un equipo emisor y un equipo receptor que permite la transmision en un unico sentido se le denomina:*multiplexor*enlace de datos*canal de comunicacion*circuito de comunicacion*ninguna de ellas*e
