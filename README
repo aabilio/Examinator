@@ -28,7 +28,7 @@ Mac OS X (*nix en general), pero para Windows necesitaréis pasarle la ruta dond
 está el ejecutable de Python antes de llamar a examinator; Ejemplo:
 C:\Python\Python.exe examinator.py archivo_de_preguntas.txt.
 
-La ultimación una vez comenzado el test se seguirá a través de la interfaz de testo
+La utilización una vez comenzado el test se seguirá a través de la interfaz de testo
 del Examinator:
 - Si el Examinator te pregunta algo y te da como opciones (s/n) el significado será "s"
 para Sí y "n" para no. Se introduce una de las repuestas posibles y se presiona ENTER.
@@ -57,10 +57,10 @@ NOTAS IMPORTANTES:
 - En general, por cada línea de pregunta siempre tiene que haber 9 campos de datos
   (aunque algunos estén vacíos) separados por asteriscos '*'.
   (El número de pregunta, la pregunta, al menos una respuesta, y el campo final
-  con la letra de la respuesta correcta en minúsculas son obligatorios
+  con la letra de la respuesta correcta en minúsculas son obligatorios).
 
 Para introducir un asterisco en una pregunta o en una respuesta, o en las observaciones
-forrajeará en el archivo de la siguiente manera: '\*'.
+se formateará en el archivo de la siguiente manera: '\*'.
 
 También se pueden incluir comentarios en el archivo de preguntas. Los comentarios serán
 aquellas líneas QUE EMPIECEN por el carácter: '#'. Estos comentarios servirán para
@@ -69,8 +69,8 @@ aclarar alguna cosa a la hora de crear o modificar el archivo de preguntas.
 Se pueden dejar líneas en blanco que no serán interpretadas como preguntas; Pueden
 ser utilizadas para que quede más claro el contenido de algún comentario, por ejemplo.
 
-Para ver un ejemplo de un archivo de preguntas ver el archivo preguntas.txt que acompaña
-a este proyecto.
+Para ver un ejemplo de un archivo de preguntas ver el archivo "preguntas.txt" que
+acompaña a este proyecto.
 
 
 
