@@ -71,3 +71,15 @@ ser utilizadas para que quede más claro el contenido de algún comentario, por 
 
 Para ver un ejemplo de un archivo de preguntas ver el archivo preguntas.txt que acompaña
 a este proyecto.
+
+
+
+ADICIONALMENTE, en el proyecto podréis encontrar un archivo llamado
+"format_examinator_file.py". Este script lo que hace es convertir los archivos
+de preguntas formateados para Examinator, en una archivo de texto con el test resuelto
+de manera correcta, para su fácil lectura.
+Este script muestra por pantalla la salida, así que si se quiere guardar en una archivo
+de texto habrá que redirigir la salida. Ejemplo en GNU/Linux:
+./format_examinator_file.py preguntas_Ing.Soft.txt > test_resuelto.txt
+Desgraciadamente este script aun no ha sido actualizado y solo funciona con los
+archivos de preguntas formateados para la antigua (1.0) versión de Examinator.
