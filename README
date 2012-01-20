@@ -2,4 +2,72 @@ Just a simple Python Script.
 A Examinator Python version:
 Take questions from a File and asks the user to answer them.
 
-aabilio@gmail.com
+- aabilio [at] gmail [dot] com - 
+
+** ¿Qué es Examinator? **
+
+Examinator es un script, que en conjunto con un archivo correctamente formateado,
+realiza un test al usuario que lo ejecuta.
+El archivo debe contener las preguntas y las respuestas en un formato concreto.
+
+** ¿Cómo puedo utilizar Examinator? **
+
+El Examinator está creado utilizando Python (2.7), así que tenéis que tener éste
+instalado (funciona en cualquier sistema operativo, o debería :) ).
+Si la versión de Python no es 2.7 (especialmente si es mayor - 3.0 ó 3.3)
+seguramente no funcione de manera correcta.
+
+El programa es de línea de comandos y se lanza con ./examinator.py
+/ruta/a/archivo/de/preguntas.txt, por ejemplo: 
+"./examinator.py preguntas_Ing.Soft.txt" (o simplemente ./examinator.py pero
+de esta forma tiene que haber en el mismo directorio donde se encuentra el
+ejecutable un archivo con preguntas que se llame necesariamente "preguntas.txt").
+
+La forma descrita anteriormente para lanzar el programa funciona en GNU/Linux y
+Mac OS X (*nix en general), pero para Windows necesitaréis pasarle la ruta donde
+está el ejecutable de Python antes de llamar a examinator; Ejemplo:
+C:\Python\Python.exe examinator.py archivo_de_preguntas.txt.
+
+La ultimación una vez comenzado el test se seguirá a través de la interfaz de testo
+del Examinator:
+- Si el Examinator te pregunta algo y te da como opciones (s/n) el significado será "s"
+para Sí y "n" para no. Se introduce una de las repuestas posibles y se presiona ENTER.
+- Si te pregunta por algún número, te dará un rango, de la forma [1 - 56], de esta manera
+se introducirá un número en ese rango y se presionará ENTER.
+- Para responder a una pregunta se presionará en el teclado una de las respuestas
+posibles y se presionará ENTER. SI SOLO SE PRESIONA ENTER, Examinator lo tomará como que
+no quiere contestar a esa pregunta específica, por lo que no sumará ni restará puntos.
+
+** ¿Cómo calcula la nota el examinator? **
+
+Utilizará la siguiente fórmula:
+nota = ((10.0000/preguntas_totales)*pregunta_acertadas-(10.0000/60)*preguntas_incorrectas)
+
+** ¿En qué formato debe estar el archivo de preguntas? **
+
+En el archivo, cada línea corresponderá con un pregunta del test, y tienen que tener el
+siguiente formato:
+NúmeroDePregunta*ObservacionesAlaPregunta*Pregunta*Respuesta_A*Respuesta_B*Respuesta_C*Respuesta_D*Respuesta_E*LetraDeRespuestaValidaEnMinúsculas
+
+NOTAS IMPORTANTES:
+- El Número de preguntas tiene que empezar en 1 y ser sucesivos.
+- El campo observaciones es opcional (NúmeroDePregunta**Pregunta*…)
+- El máximo de respuestas son 5, pero pueden ser menos (al menos tiene que haber una)
+  Ejemplo para dos respuestas: NúmeroDePregunta**Pregunta*Respuesta_A**Respuesta_B****Sol
+- En general, por cada línea de pregunta siempre tiene que haber 9 campos de datos
+  (aunque algunos estén vacíos) separados por asteriscos '*'.
+  (El número de pregunta, la pregunta, al menos una respuesta, y el campo final
+  con la letra de la respuesta correcta en minúsculas son obligatorios
+
+Para introducir un asterisco en una pregunta o en una respuesta, o en las observaciones
+forrajeará en el archivo de la siguiente manera: '\*'.
+
+También se pueden incluir comentarios en el archivo de preguntas. Los comentarios serán
+aquellas líneas QUE EMPIECEN por el carácter: '#'. Estos comentarios servirán para
+aclarar alguna cosa a la hora de crear o modificar el archivo de preguntas.
+
+Se pueden dejar líneas en blanco que no serán interpretadas como preguntas; Pueden
+ser utilizadas para que quede más claro el contenido de algún comentario, por ejemplo.
+
+Para ver un ejemplo de un archivo de preguntas ver el archivo preguntas.txt que acompaña
+a este proyecto.
