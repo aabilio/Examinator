@@ -2,48 +2,28 @@
 # -*- coding: utf-8 -*-
 
 # Examinator Python's Version by aabilio
-
-# This version of Examinator expects a file in the same directory 
-# as the executable called "preguntas.txt" or a parameter: path to the file.
-# The file should be in the following format:
-#	number_of_question*Question*opt1*opt2*opt3*opt4*opt5*rigth_option
-# (optx = optionX in text format, and right_option in letter format ex.: "e")
+# aabilio [at] gmail [dot] com
 
 import sys
 import os
+import codecs
 from random import shuffle
 
 #OPCs:
 FILE = "preguntas.txt" # Path to the file
 NAME = "Examinator" # Program's name
-VERSION = "1.0" # Program's version
+VERSION = "2.0" # Program's version
 PRESENTATION = "%s - %s" % (NAME,VERSION) # Presentation on doFromat()
-AUTHOR = "aabilio"
 # ==== End OPCs
 
 def win32():
-	'''return True if the user's platform is Windows'''
-	if sys.platform is "Win32": return True
+	if sys.platform == "win32": return True
 	else: return False
 def cls():
-	'''Clear screen'''
 	if win32(): os.system("cls")
 	else: os.system("clear")
 def Win32end():
-	'''Prevents the close of the cmd window on Windows'''
 	raw_input("[PROGRAM END - ENTER TO EXIT]")
-	sys.exit()
-
-def usage():
-	print "%s (%s) (Python Version) by %s\n\nUsage:\n\t%s [questions_file]" % (NAME, VERSION, AUTHOR, sys.argv[0])
-	win32end() if win32() else sys.exit()
-
-def get_answer(msg):
-	''' "raw_input()" --> validate the answer'''
-	while True:
-		char = raw_input(msg)
-		if char in ["a","b","c","d","e"]: return char
-
 
 def printt(*msg):
     '''
@@ -54,7 +34,7 @@ def printt(*msg):
         - Always use the "u" unicode
         - printt(), unlike built in print python function, does not print an adiciaonal newline character
         - Examples:
-        	* printt(u"Hi! %s you're user number is %d" % (user, 925))
+        	* printt(u"Hi! %s you're user number %d" % (user, 925))
         	* printt(u"This is a message")
     '''
     if win32():
@@ -80,42 +60,53 @@ def doFormat():
 	print lateral_symbol, " " * w, PRESENTATION, " " * w, lateral_symbol
 	print up_down_symbol * length
 
-def getScore(win, lose):
+def getScore(win, lose, nkna):
 	'''print on screen the score'''
 	#OPCS:
-	length = 30 # Must be even
+	length = 44 # Must be even
 	up_down_symbol = "-" #len() must be even
 	lateral_symbol = "-" 
 	# ==== end OPCS
-	msg = "Aciertos: %d\tFallos: %d" % (win, lose)
-	w = (length-len(msg)-4-len(lateral_symbol)*2)/2
-	length = length/len(up_down_symbol)
-	print "\t\t" + up_down_symbol * length
-	print "\t\t" + lateral_symbol, " " * w, msg, " " * w, lateral_symbol
-	print "\t\t" + up_down_symbol * length
+
+	## Do not edit anything from here (unless you know what you're doing)
+	msg = "Aciertos: %d\t  Fallos: %d\tNSNC: %d" % (win, lose, nkna)
+	w = (length-len(msg)-4-len(lateral_symbol)*2)/6
+	#length = length/len(up_down_symbol)
+	print "\t" + up_down_symbol * length
+	print "\t" + lateral_symbol, " " * w, msg, " " * w, lateral_symbol
+	print "\t" + up_down_symbol * length
 
 def nrandom(top, how_many_questions):
-	'''
-		Take a top (number of questions on the file) and a number of desire
-	 	questions and return a random list of numbers
-	'''
+	'''Take a top and a number of questions and return list of numbers'''
 	a = [n for n in range(1,top+1)]
 	shuffle(a)
 	return a[:how_many_questions]
 
+class BadFileFormat(Exception):
+	def __init__(self, text, msg = None, line = None):
+		self.__text = text
+		self.__msg = msg if msg is not None else None
+		self.__line = str(line) if line is not None else "Unknow line"
+	def __str__(self):
+		return self.__msg + " %s --> %s" % (self.__line, self.__text) if self.__msg is not None else "General Format Error on line: %s --> %s" % (self.__line, self.__text)
+
 class Question(object):
-	''' Question Class '''
 	lettopc = {0:"a",1:"b",2:"c",3:"d",4:"e"}
 	opclett = {"a":0,"b":1,"c":2,"d":3,"e":4}
-	def __init__(self, num, quest, a1, a2, a3, a4, a5, answer):
+	def __init__(self, num, comment, quest, a1, a2, a3, a4, a5, answer):
 		self.num = num
+		if type(comment) is unicode:
+			self.comment = comment if not comment.isspace() else None
+		else:
+			self.comment = None
 		self.quest = quest
-		self.a1 = a1
-		self.a2 = a2
-		self.a3 = a3
-		self.a4 = a4
-		self.a5 = a5
-		self.options = [a1,a2,a3,a4,a5]
+		self.a1 = a1 if a1 is not u"" else None
+		self.a2 = a2 if a2 is not u"" else None
+		self.a3 = a3 if a3 is not u"" else None
+		self.a4 = a4 if a4 is not u"" else None
+		self.a5 = a5 if a5 is not u"" else None
+		self.options = [self.a1,self.a2,self.a3,self.a4,self.a5]
+		self.options_let = [self.lettopc[n] for n in range(len(self.options)) if self.options[n] is not None]
 		self.answer = answer
 		self.answer_str = self.options[self.opclett[answer]]
 
@@ -134,71 +125,99 @@ def doQuiz(questions_str):
 
 	Q = []
 	for number in random_question_number:
-		Q.append(Question(int(questions_str[number][0]),questions_str[number][1],questions_str[number][2],
-							questions_str[number][3],questions_str[number][4],questions_str[number][5],
-							questions_str[number][6],questions_str[number][7].strip()))
+		Q.append(Question(int(questions_str[number-1][0]),questions_str[number-1][1],questions_str[number-1][2],
+							questions_str[number-1][3],questions_str[number-1][4],questions_str[number-1][5],
+							questions_str[number-1][6],questions_str[number-1][7],
+							questions_str[number-1][8].strip()))
 
-	win = lose = 0
+	win = lose = nkna = 0
 	b = 1
 	for q in Q:
 		doFormat()
-		getScore(win, lose)
-		print "Pregunta nº %d:" % b
+		getScore(win, lose, nkna)
+		printt(u"Pregunta nº %d:\n" % b)
 		b += 1
-		print "\t"+ q.quest
+		printt(u"\t"+ unicode(q.quest) + u"\n")
+		if q.comment:
+			printt(u"Comentario:\n\t%s\n" % q.comment)
 		print "Opciones:"
 		for i in range(len(q.options)):
-			print "\t" + q.lettopc[i] + ")", q.options[i]
-		print ""
-		answer = get_answer("Tu respuesta: ")
-		#answer_str = questions[number][opclett[questions[number][7].strip()]]
+			if q.options[i] is not None:
+				printt(u"\t" + unicode(q.lettopc[i]) + ")", unicode(q.options[i]) + u"\n")
+		while(True):
+			try:
+				answer = raw_input("\nTu respuesta (ENTER para no contestar): ")
+				if answer in q.options_let or answer is '': break
+				else: printt(u"\t%c) no es una opción disponible." % answer)
+			except TypeError:
+				printt(u"\tError de tipado en la respuesta")
 		if answer == q.answer:
 			win += 1
 			print "\t\tTu respuesta es: Correcta!!"
+		elif answer == '':
+			printt(u"\t\tNo has contestado. No se restarán ni sumarán puntos.\n")
+			printt(u"La Respuesta Correcta era:\n\t%s) %s\n" % (unicode(q.answer), unicode(q.answer_str)))
+			nkna += 1
 		else:
 			print "\t\tTu respuesta es: Incorrecta :("
-			print "Respuesta Correcta:\n\t%s) %s" % (q.answer, q.answer_str)
+			printt(u"Respuesta Correcta:\n\t%s) %s\n" % (unicode(q.answer), unicode(q.answer_str)))
 			lose += 1
 		raw_input()
 	doFormat()
-	getScore(win,lose)
-
+	getScore(win,lose,nkna)
 	print "\nNo hay mas preguntas"
 	print "\nResumen:"
-	print "\tRespuestas correctas:", str(win)
-	printt(u"\tRespuestas erróneas :", str(lose))
+	print "\tRespuestas correctas :", str(win)
+	printt(u"\tRespuestas erróneas  : %s\n" % str(lose))
+	printt(u"\tNo contestadas       : %s\n" % str(nkna))
 	nota = ((10.0000/hmq)*win-(10.0000/60)*lose)
 	if nota < 0.00: nota = 0.00
-	print "\n\tNota: %.2f\tHas Aprobado! :)" % nota if nota > 5.00 else "\n\tNota: %.2f\tHas Suspendido! :)" % nota
+	if nota > 5.00: printt(u"\n\tNota: %.2f\tHas Aprobado! :)\n" % nota)
+	else: printt(u"\n\tNota: %.2f\tHas Suspendido! :(" % nota) 
+	#print "\n\tNota: %.2f\tHas Aprobado! :)" % nota if nota > 5.00 else "\n\tNota: %.2f\tHas Suspendido! :)" % nota
+	del nota, win, lose
 
-def getQuestionsFromFile(File):
+def getQuestionsFromFile(file):
 	'''Take an file and return the questions in list of list format'''
 	quest = []
 	try:
-		f = open(File)
+		#f = open(file)
+		f = codecs.open(file, encoding="utf-8")
 	except IOError:
 		if win32:
-			print "No se encuentra el fichero con las preguntas:", File
+			print "No se encuentra el fichero con las preguntas:", file
 			sys.exit()
 		else:
-			sys.exit("No se encuentra el fichero con preguntas: %s" % File)
-	
-	quest.append(["Skip this line"])
+			sys.exit("No se encuentra el fichero con preguntas: %s" % file)
+
+	line_number = 1
 	while True:
 		line = f.readline()
 		if not line: break
 		else:
-			tmp = line.split("*")
-			quest.append(tmp)
+			if line.startswith('#'): continue
+			elif line.isspace(): continue
+			# ATENCIÓN: Chapuza para no usar expresiones regulares
+			elif line.split("*")[0].isdigit():
+				if line.find("\*") != -1:
+					line = line.replace("\*", "(AsTeRiScO)")
+					line = line.replace("*", "(SePaRaDoR)")
+					line = line.replace("(AsTeRiScO)", "*")
+					tmp = line.split("(SePaRaDoR)")
+				else:
+					tmp = line.split("*")
+				quest.append(tmp)
+			else:
+				raise BadFileFormat(line, "File Error on line", line_number)
+		line_number += 1
 	f.close()
 	return quest
 
 
 if __name__ == "__main__":
-	if len(sys.argv) == 2: File = sys.argv[1]
-	elif len(sys.argv) == 1: File = FILE
-	else: usage()
-	questions_str = getQuestionsFromFile(File)
+	if len(sys.argv) > 1: File = sys.argv[1]
+	else: File = FILE
+
 	try:
 		doFormat()
 		print ""
@@ -211,16 +230,17 @@ if __name__ == "__main__":
 		while opc == "s":
 			doFormat()
 			opc = ""
+			questions_str = getQuestionsFromFile(File)
 			doQuiz(questions_str)
 			while opc != "s" and opc != "n":
 				printt(u"\n\nQuiéres hacer otro test (s/n): ")
 				opc = raw_input()
 				if opc == "n":
-					if win32(): win32end()
+					if win32(): Win32end()
 					else: print "\nOK, Bye!"
 	except KeyboardInterrupt:
 		if win32():
 			print "\nOK, Bye!"
-			win32end()
+			Win32end()
 		else:
 			sys.exit("\nOK, Bye!")
