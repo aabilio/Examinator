@@ -2,7 +2,7 @@
 
 # De las siguientes preguntas no todas utilizan observaciones puntuales, ni tampoco hacen uso de todas las posibles respuestas:
 
-01*No tengo claro que esta pregunta entre en el test (comentario sobre una pregunta puntual que aparecerá en la interfaz de usuario).*¿Qué son los requisitos emergentes del sistema?*Los que surgen o se derivan del sistema, como el tiempo de respuesta y la fiabilidad.*Características inherentes del sistema como la capacidad de los dispositivos de Entrada/Salida****a
+01*No tengo claro que esta pregunta entre en el test (comentario sobre una pregunta puntual que aparecerá en la interfaz de usuario).*¿Qué son los requisitos emergentes del sistema?*Los que surgen o se derivan del sistema, como el tiempo de respuesta y la fiabilidad.*Características inherentes del sistema como la capacidad de los dispositivos de Entrada/Salida****a*
 02**Marca la falsa: A la hora de hacer la parte interactiva de un sistema..*Hay que tener en cuenta la psicología del usuario.*Es una parte imprescindible para el éxito de la aplicación.*Solo se tiene en cuenta en la implementación porque es donde se desarrollan las API's.*Es una parte muy importante para la accesibilidad y la usabilidad de la aplicación.**c*
 
 # Este es un comentario (que está rodeado de líneas en blanco, para su mejor visualización)
