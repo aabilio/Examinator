@@ -88,12 +88,18 @@ class BadFileFormat(Exception):
 		self.__msg = msg if msg is not None else None
 		self.__line = str(line) if line is not None else "Unknow line"
 	def __str__(self):
-		return self.__msg + " %s --> %s" % (self.__line, self.__text) if self.__msg is not None else "General Format Error on line: %s --> %s" % (self.__line, self.__text)
+		ret = ""
+		if self.__msg is not None:
+			ret =  ": " + self.__msg + " %s --> %s" % (self.__line, self.__text)
+		else:
+			ret = ": General Format Error on line: %s --> %s" % (self.__line, self.__text)
+		printt(ret) #TODO: Ver por qué no imprime bien el mensaje.. printt de momento
+		return ret
 
 class Question(object):
 	lettopc = {0:"a",1:"b",2:"c",3:"d",4:"e"}
 	opclett = {"a":0,"b":1,"c":2,"d":3,"e":4}
-	def __init__(self, num, comment, quest, a1, a2, a3, a4, a5, answer):
+	def __init__(self, num, comment, quest, a1, a2, a3, a4, a5, answer, more):
 		self.num = num
 		if type(comment) is unicode:
 			self.comment = comment if not comment.isspace() else None
@@ -109,6 +115,7 @@ class Question(object):
 		self.options_let = [self.lettopc[n] for n in range(len(self.options)) if self.options[n] is not None]
 		self.answer = answer
 		self.answer_str = self.options[self.opclett[answer]]
+		self.more = more if more is not u"" else None
 
 def doQuiz(questions_str):
 	'''The core main of Quiz'''
@@ -127,8 +134,8 @@ def doQuiz(questions_str):
 	for number in random_question_number:
 		Q.append(Question(int(questions_str[number-1][0]),questions_str[number-1][1],questions_str[number-1][2],
 							questions_str[number-1][3],questions_str[number-1][4],questions_str[number-1][5],
-							questions_str[number-1][6],questions_str[number-1][7],
-							questions_str[number-1][8].strip()))
+							questions_str[number-1][6],questions_str[number-1][7], questions_str[number-1][8].strip(),
+							questions_str[number-1][9]))
 
 	win = lose = nkna = 0
 	b = 1
@@ -162,6 +169,8 @@ def doQuiz(questions_str):
 			print "\t\tTu respuesta es: Incorrecta :("
 			printt(u"Respuesta Correcta:\n\t%s) %s\n" % (unicode(q.answer), unicode(q.answer_str)))
 			lose += 1
+		if q.more:
+			printt(u"Más Info:\n\t%s\n" % q.more)
 		raw_input()
 	doFormat()
 	getScore(win,lose,nkna)
@@ -206,8 +215,10 @@ def getQuestionsFromFile(file):
 					tmp = line.split("(SePaRaDoR)")
 				else:
 					tmp = line.split("*")
+				tmp[-1] = tmp[-1].strip()
 				quest.append(tmp)
 			else:
+				#TODO: Arreglar este raise para que se muestre bien la info de excepción
 				raise BadFileFormat(line, "File Error on line", line_number)
 		line_number += 1
 	f.close()

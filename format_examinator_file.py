@@ -41,12 +41,18 @@ if __name__ == "__main__":
 		File = sys.argv[1]
 	
 	questions = getQuestionsFromFile(File)
-	qtonum = {2:"a",3:"b",4:"c",5:"d",6:"e"}
+	qtonum = {3:"a",4:"b",5:"c",6:"d",7:"e"}
 
 	for question in questions:
-		print "%s) %s" % (question[0], question[1])
-		for i in range(2,7):
-			if qtonum[i] == question[7].strip():
-				print "  > %s) %s" % (qtonum[i],question[i])
-			else:
-				print "    %s) %s" % (qtonum[i],question[i])
+		if question[1] != "":
+			print "%s) %s (%s)" % (question[0], question[2], question[1])
+		else:
+			print "%s) %s" % (question[0], question[2])
+		for i in range(3,8):
+			if question[i] != "":
+				if qtonum[i] == question[8].strip():
+					print "  > %s) %s" % (qtonum[i],question[i])
+				else:
+					print "    %s) %s" % (qtonum[i],question[i])
+		if question[9].strip() != "":
+			print "INFO:", question[9].strip()

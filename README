@@ -47,7 +47,12 @@ nota = ((10.0000/preguntas_totales)*pregunta_acertadas-(10.0000/60)*preguntas_in
 
 En el archivo, cada línea corresponderá con un pregunta del test, y tienen que tener el
 siguiente formato:
-NúmeroDePregunta*ObservacionesAlaPregunta*Pregunta*Respuesta_A*Respuesta_B*Respuesta_C*Respuesta_D*Respuesta_E*LetraDeRespuestaValidaEnMinúsculas
+NúmeroDePregunta*ObservacionesAlaPregunta*Pregunta*Respuesta_A*Respuesta_B*Respuesta_C*
+Respuesta_D*Respuesta_E*LetraDeRespuestaValidaEnMinúsculas*InfoAdiccional
+
+ATENCIÓN: El salto de línea anteriro (después de Respuesta_C no se tiene que poner en el archivo
+formateado par alas preguntas, solo se hará salto de línea al final de cada pregunta. Lo incluyo
+para que se vea toda la información que hay que poner en GitHub.com
 
 NOTAS IMPORTANTES:
 - El Número de preguntas tiene que empezar en 1 y ser sucesivos.
