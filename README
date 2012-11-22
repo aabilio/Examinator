@@ -56,12 +56,12 @@ para que se vea toda la información que hay que poner en GitHub.com
 
 NOTAS IMPORTANTES:
 - El Número de preguntas tiene que empezar en 1 y ser sucesivos.
-- El campo observaciones es opcional (NúmeroDePregunta**Pregunta*…)
+- Los campo observaciones y Info Adicional son opcionales (NúmeroDePregunta**Pregunta*…)
 - El máximo de respuestas son 5, pero pueden ser menos (al menos tiene que haber una)
-  Ejemplo para dos respuestas: NúmeroDePregunta**Pregunta*Respuesta_A**Respuesta_B****Sol
-- En general, por cada línea de pregunta siempre tiene que haber 9 campos de datos
+  Ejemplo para dos respuestas: NúmeroDePregunta**Pregunta*Respuesta_A**Respuesta_B****Sol*
+- En general, por cada línea de pregunta siempre tiene que haber 10 campos de datos
   (aunque algunos estén vacíos) separados por asteriscos '*'.
-  (El número de pregunta, la pregunta, al menos una respuesta, y el campo final
+  (El número de pregunta, la pregunta, al menos una respuesta, y el penúltimo campo
   con la letra de la respuesta correcta en minúsculas son obligatorios).
 
 Para introducir un asterisco en una pregunta o en una respuesta, o en las observaciones

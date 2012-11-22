@@ -3,13 +3,13 @@
 # De las siguientes preguntas no todas utilizan observaciones puntuales, ni tampoco hacen uso de todas las posibles respuestas:
 
 01*No tengo claro que esta pregunta entre en el test (comentario sobre una pregunta puntual que aparecerá en la interfaz de usuario).*¿Qué son los requisitos emergentes del sistema?*Los que surgen o se derivan del sistema, como el tiempo de respuesta y la fiabilidad.*Características inherentes del sistema como la capacidad de los dispositivos de Entrada/Salida****a
-02**Marca la falsa: A la hora de hacer la parte interactiva de un sistema..*Hay que tener en cuenta la psicología del usuario.*Es una parte imprescindible para el éxito de la aplicación.*Solo se tiene en cuenta en la implementación porque es donde se desarrollan las API's.*Es una parte muy importante para la accesibilidad y la usabilidad de la aplicación.**c
+02**Marca la falsa: A la hora de hacer la parte interactiva de un sistema..*Hay que tener en cuenta la psicología del usuario.*Es una parte imprescindible para el éxito de la aplicación.*Solo se tiene en cuenta en la implementación porque es donde se desarrollan las API's.*Es una parte muy importante para la accesibilidad y la usabilidad de la aplicación.**c*
 
 # Este es un comentario (que está rodeado de líneas en blanco, para su mejor visualización)
 
-03**¿Cuál es la relación más importante en el modelo de dominio?*Asociación funcional.*Asociaciones todo-parte.*Generalizaciones.*Asociaciones "necesito-conocer"**d
+03**¿Cuál es la relación más importante en el modelo de dominio?*Asociación funcional.*Asociaciones todo-parte.*Generalizaciones.*Asociaciones "necesito-conocer"**d*Este es un comentario adicional
 
-04*Esto es una observación a una pregunta, aparecerá en la interfaz del examinador para aclararle algo al que realiza el test.*En una relación \* todo-parte.. (Esta respuesta no es segura)*El tiempo de vida de la parte está ligada al tiempo de vida del todo.*La vida del todo está ligada a la vida de las partes.****a
+04*Esto es una observación a una pregunta, aparecerá en la interfaz del examinador para aclararle algo al que realiza el test.*En una relación \* todo-parte.. (Esta respuesta no es segura)*El tiempo de vida de la parte está ligada al tiempo de vida del todo.*La vida del todo está ligada a la vida de las partes.****a*
 
 # Como se observa en las dos últimas preguntas, se vuelve a utilizar un espacio entre ellas (según gustos, para una mejor visualización del archivo).
 # En la pregunta número cuatro (4), se puede observar la utilización de un asterisco '*' en el campo de la pregunta, utilizando '\*'.
