@@ -44,6 +44,7 @@ if __name__ == "__main__":
 	qtonum = {3:"a",4:"b",5:"c",6:"d",7:"e"}
 
 	for question in questions:
+		if question[0] == '\n': continue #TODO: adaptar este ejecutable para que acepte los nuevos archivos
 		if question[1] != "":
 			print "%s) %s (%s)" % (question[0], question[2], question[1])
 		else:
